@@ -1,0 +1,314 @@
+/* =========================
+   Property Finder Navbar
+========================= */
+
+.pf-navbar {
+  background: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pf-navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo & Brand */
+.pf-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.pf-navbar-brand:hover {
+  transform: translateY(-1px);
+}
+
+.pf-logo-oval {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.pf-brand-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Navbar Actions */
+.pf-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Bookmark Icon */
+.pf-nav-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.pf-nav-icon:hover {
+  background: #f3f4f6;
+  color: #2563EB;
+}
+
+/* Buttons */
+.pf-btn-outline {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #2563EB;
+  background: transparent;
+  color: #2563EB;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.pf-btn-outline:hover {
+  background: #2563EB;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.pf-btn-primary {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  display: inline-block;
+}
+
+.pf-btn-primary:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  color: white;
+}
+
+/* User Dropdown */
+.pf-dropdown {
+  position: relative;
+}
+
+.pf-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.375rem 0.75rem;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.pf-user-menu:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.pf-user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.pf-username {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.pf-chevron {
+  color: #6b7280;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.pf-user-menu:hover .pf-chevron {
+  transform: translateY(1px);
+}
+
+/* Dropdown Menu */
+.pf-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  min-width: 240px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.pf-dropdown:hover .pf-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.pf-dropdown-header {
+  padding: 1rem;
+}
+
+.pf-dropdown-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pf-dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.pf-dropdown-details {
+  flex: 1;
+}
+
+.pf-dropdown-name {
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.pf-dropdown-email {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.pf-dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0.5rem 0;
+}
+
+.pf-dropdown-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 8px;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.pf-dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.pf-logout {
+  color: #dc2626;
+}
+
+.pf-logout:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.pf-dropdown-item i {
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pf-navbar-container {
+    padding: 0 1rem;
+  }
+
+  .pf-brand-text {
+    font-size: 1.1rem;
+  }
+
+  .pf-logo-oval {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pf-username {
+    display: none;
+  }
+
+  .pf-navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .pf-btn-outline,
+  .pf-btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-btn-outline {
+    display: none;
+  }
+}

@@ -1,0 +1,361 @@
+/* =========================
+   Property Finder Landing/Hero
+========================= */
+
+.pf-hero {
+  position: relative;
+  min-height: 85vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+/* Animated Background Elements */
+.pf-hero-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pf-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(29, 78, 216, 0.12) 100%);
+  animation: float-circle 20s ease-in-out infinite;
+}
+
+.pf-circle-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.pf-circle-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 5s;
+}
+
+.pf-circle-3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+@keyframes float-circle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.05);
+  }
+}
+
+/* Hero Content */
+.pf-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.pf-hero-text {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pf-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  letter-spacing: -1px;
+}
+
+.pf-hero-highlight {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pf-hero-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Search Container */
+.pf-search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out 0.2s backwards;
+}
+
+.pf-search-box {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.pf-search-box:focus-within {
+  border-color: #2563EB;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+}
+
+.pf-search-icon {
+  padding: 0 0.75rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+}
+
+.pf-city-select {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.pf-city-select option {
+  padding: 0.5rem;
+}
+
+.pf-search-btn {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  white-space: nowrap;
+}
+
+.pf-search-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.pf-search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pf-search-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.pf-search-btn:hover:not(:disabled) svg {
+  transform: translateX(3px);
+}
+
+/* Quick Stats */
+.pf-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: fade-in-up 0.8s ease-out 0.4s backwards;
+}
+
+.pf-stat-item {
+  text-align: center;
+}
+
+.pf-stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.pf-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.pf-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: #e5e7eb;
+}
+
+/* Decorative House Illustration */
+.pf-hero-image {
+  position: absolute;
+  bottom: 2rem;
+  right: 5%;
+  width: 350px;
+  z-index: 5;
+  animation: float-house 6s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes float-house {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.pf-house-illustration {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(37, 99, 235, 0.2));
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pf-hero-image {
+    width: 280px;
+    right: 2%;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pf-hero {
+    min-height: 70vh;
+    padding: 2rem 0;
+  }
+
+  .pf-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .pf-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .pf-search-box {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .pf-search-icon {
+    display: none;
+  }
+
+  .pf-city-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+  }
+
+  .pf-search-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pf-stats {
+    gap: 1rem;
+  }
+
+  .pf-stat-number {
+    font-size: 1.5rem;
+  }
+
+  .pf-stat-divider {
+    display: none;
+  }
+
+  .pf-hero-image {
+    display: none;
+  }
+
+  .pf-circle-1,
+  .pf-circle-2 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-hero-title {
+    font-size: 2rem;
+  }
+
+  .pf-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .pf-hero-text {
+    margin-bottom: 2rem;
+  }
+
+  .pf-search-container {
+    margin-bottom: 2rem;
+  }
+
+  .pf-hero-content {
+    padding: 0 1rem;
+  }
+}
